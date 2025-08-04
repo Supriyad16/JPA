@@ -14,6 +14,8 @@ public class BookRunner {
 
 
         BookService bookService = new BookServiceImp();
-        bookService.save(bookEntity);
+       // bookService.save(bookEntity);
+        bookService.save(bookEntity1);
+        bookService.save(bookEntity2);
     }
 }
