@@ -7,7 +7,6 @@ import com.xworkz.hostel.repository.HostelRepositoryImp;
 public class HostelServiceImp implements HostelService{
     @Override
     public HostelEntity save(HostelEntity hostelEntity) {
-
         System.out.println("Service Implements"+hostelEntity);
 
         HostelRepository hostelRepository = new HostelRepositoryImp();

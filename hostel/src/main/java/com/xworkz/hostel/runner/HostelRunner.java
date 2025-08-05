@@ -20,5 +20,6 @@ public class HostelRunner {
 
         hostelService.deleteHostelEntityById(1);
 
+
     }
 }

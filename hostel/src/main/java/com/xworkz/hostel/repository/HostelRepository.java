@@ -13,3 +13,4 @@ public interface HostelRepository {
     void deleteHostelEntityById(int id);
 
 }
+

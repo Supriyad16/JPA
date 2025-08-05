@@ -42,7 +42,7 @@ public class HostelRepositoryImp implements HostelRepository{
     }
 
     @Override
-    public HostelEntity getHostelEntityById(int id) {EntityManagerFactory emf = null;
+    public HostelEntity getHostelEntityById(int id) {
 
         EntityManagerFactory emf = null;
         EntityManager em = null;

@@ -12,4 +12,6 @@ public interface HostelService {
     boolean updateHostelEntityById(int id, String candidateName);
 
     void deleteHostelEntityById(int id);
+
+
 }
