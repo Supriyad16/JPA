@@ -13,5 +13,12 @@ public class HostelRunner {
         HostelService hostelService = new HostelServiceImp();
         hostelService.save(hostelEntity);
 
+        HostelEntity hostelEntity1 = hostelService.getHostelEntityById(2);
+        System.out.println(hostelEntity1);
+
+        hostelService.updateHostelEntityById(1, "Rama");
+
+        hostelService.deleteHostelEntityById(1);
+
     }
 }

@@ -14,4 +14,23 @@ public class HostelServiceImp implements HostelService{
         hostelRepository.save(hostelEntity);
         return null;
     }
+
+    @Override
+    public HostelEntity getHostelEntityById(int id) {
+        HostelRepository hostelRepository = new HostelRepositoryImp();
+        return hostelRepository.getHostelEntityById(id);
+    }
+
+    @Override
+    public boolean updateHostelEntityById(int id, String candidateName) {
+        HostelRepository hostelRepository = new HostelRepositoryImp();
+        return hostelRepository.updateHostelEntityById(id,candidateName);
+    }
+
+    @Override
+    public void deleteHostelEntityById(int id) {
+        HostelRepository hostelRepository = new HostelRepositoryImp();
+        hostelRepository.deleteHostelEntityById(id);
+
+    }
 }
