@@ -15,7 +15,14 @@ public class BookRunner {
 
         BookService bookService = new BookServiceImp();
        // bookService.save(bookEntity);
-        bookService.save(bookEntity1);
-        bookService.save(bookEntity2);
+       // bookService.save(bookEntity1);
+       // bookService.save(bookEntity2);
+
+        BookEntity bookEntity3 = bookService.getBookEntityById(2);
+        System.out.println(bookEntity3);
+
+        bookService.updateBookEntityById(1,"Its ends with us");
+
+        bookService.deleteBookEntityById(3);
     }
 }

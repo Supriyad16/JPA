@@ -40,4 +40,105 @@ public class BookRepositoryImp implements BookRepository{
 
         return null;
     }
+
+    @Override
+    public BookEntity getBookEntityById(int id) {
+
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
+        EntityTransaction et = null;
+        BookEntity book = null;
+
+        try
+        {
+            emf = Persistence.createEntityManagerFactory("abc");
+            em = emf.createEntityManager();
+            et = em.getTransaction();
+            et.begin();
+
+          book =   em.find(BookEntity.class,id);
+            et.commit();
+
+        }
+
+        catch (Exception e){
+            if (et.isActive()){
+                et.rollback();
+            }
+        }
+
+        finally{
+            emf.close();
+        }
+        return book;
+    }
+
+    @Override
+    public boolean updateBookEntityById(int id, String bookName) {
+
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
+        EntityTransaction et = null;
+        BookEntity book = null;
+
+        try
+        {
+            emf = Persistence.createEntityManagerFactory("abc");
+            em = emf.createEntityManager();
+            et = em.getTransaction();
+            et.begin();
+
+            book =   em.find(BookEntity.class,id);
+            book.setBookName(bookName);
+            et.commit();
+            return true;
+
+        }
+
+        catch (Exception e){
+            if (et.isActive()){
+                et.rollback();
+            }
+        }
+
+        finally{
+            emf.close();
+        }
+        return false;
+
+    }
+
+    @Override
+    public BookEntity deleteBookEntityById(int id) {
+
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
+        EntityTransaction et = null;
+        BookEntity book = null;
+
+        try
+        {
+            emf = Persistence.createEntityManagerFactory("abc");
+            em = emf.createEntityManager();
+            et = em.getTransaction();
+            et.begin();
+
+            book =   em.find(BookEntity.class,id);
+            em.remove(book);
+            et.commit();
+
+        }
+
+        catch (Exception e){
+            if (et.isActive()){
+                et.rollback();
+            }
+        }
+
+        finally{
+            emf.close();
+        }
+
+        return null;
+    }
 }
