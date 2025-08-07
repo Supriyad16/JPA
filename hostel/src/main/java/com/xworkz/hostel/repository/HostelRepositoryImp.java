@@ -25,6 +25,7 @@ public class HostelRepositoryImp implements HostelRepository{
 
             et.begin();
 
+
             em.persist(hostelEntity);
             et.commit();
 
