@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @ComponentScan(basePackages = "com.xworkz.solar")
+
 public class SolarConfiguration implements WebMvcConfigurer {
 
     public SolarConfiguration(){
